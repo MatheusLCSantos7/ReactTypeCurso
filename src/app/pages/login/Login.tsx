@@ -6,12 +6,27 @@ export  const Login = () => {
     const handleclick = () =>{
         history("/pagina-inicial");
     }
-
-
     return(
         <>
-        Login
-        <button onClick={handleclick}>Pagina Inicial</button>
+            <form action="">
+                <label htmlFor="">
+                    <span>Email</span>
+                    <input/>
+                </label>
+
+
+                <label htmlFor="">
+                    <span>Senha</span>
+                    <input type="password"/>
+                </label>
+            </form>
+
+        
+        <button onClick={handleclick}>Voltar para Pagina Inicial</button>
         </>
     );
 }
+
+
+
+
