@@ -1,11 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-// Importa hooks do React para gerenciar estado e efeitos colaterais.
-
 import { useNavigate } from "react-router-dom";
-// Importa useNavigate do react-router-dom para navegação.
-
 import { InputLogin } from "./components/inputLogin";
-// Importa o componente InputLogin do arquivo InputLogin.tsx.
+import { ButtonLogin } from "./components/ButtonLogin";
+
 
 export const Login = () => {
     // Define e exporta o componente Login.
@@ -58,11 +55,16 @@ export const Login = () => {
                     onChange={newValue => setSenha(newValue)}
                     // O segundo InputLogin para senha com type="password", label, value, ref e onChange.
                 />
+                
+                <ButtonLogin type="button" onClick={handleclickLogin}>
+                    Entrar
+                </ButtonLogin>
 
-                <button type="button" onClick={handleclickLogin}>
-                    LOGAR
-                </button>
-                {/* Botão que, quando clicado, chama handleclickLogin */}
+                <ButtonLogin type="button" onClick={handleclickLogin}>
+                    Cadastrar-se
+                </ButtonLogin>
+            
+            
             </form>
             <br />
             <button onClick={handleclick}>Voltar para Página Inicial</button>
