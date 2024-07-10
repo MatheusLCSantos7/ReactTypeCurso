@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { InputLogin } from "./components/inputLogin";
 import { ButtonLogin } from "./components/ButtonLogin";
-
+import { useUsuarioLogado } from "../../shared/hooks";
+//import { UsuarioLogadoContext } from '../../shared/contexts';
 
 export const Login = () => {
     // Define e exporta o componente Login.
@@ -33,10 +34,18 @@ export const Login = () => {
     }, [email, senha]);
     // Define a função handleclickLogin usando useCallback para registrar email e senha no console. Recalcula apenas quando email ou senha mudam.
 
+
+
+    const {nomeDoUsuario} = useUsuarioLogado();
+
+
+
     return (
         <>
             <p>Quantidade de letras do email: {emailLenght}</p>
             {/* Exibe a quantidade de letras do email */}
+
+            <p>{nomeDoUsuario}</p>
 
             <form action="">
                 <InputLogin 
